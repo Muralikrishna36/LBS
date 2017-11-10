@@ -1,0 +1,10 @@
+import java.util.Date;
+public aspect HelloAspect{
+	pointcut greeting(): call(* Hello.greeting(..));
+	before(): greeting(){
+          System.out.print("AOP test: Murali.This is before Hello.greeting() ....invoked \n");    
+    	 }
+        after(): greeting(){
+          System.out.print("This is after Hello.greeting() ....invoked.The time now is " + (new Date()).toString());    
+    	}
+}
